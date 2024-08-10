@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background: black;
+                padding: 0;
+                margin: 0;
+            }
+            div {
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                left: 0px;
+                right: 0px;
+                width: 300px;
+                height: 300px;
+                margin: auto;
+            }
+            .g-spin  circle{
+                transform-origin: 120px 120px;
+                transform: rotate(0);
+            }
+            .g-spin circle {
+                animation: rotation 4s infinite alternate;
+            }
+            .g-spin circle:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+            .g-spin circle:nth-child(3) {
+                animation-delay: 0.75s;
+            }
+            .g-spin circle:nth-child(4) {
+                animation-delay: 1s;
+            }
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <svg width="300" height="300" viewbox="0 0 240 240">
+                <g class="g-spin" stroke-width="10" stroke-dasharray="18% 40%">
+                    <circle r="50" cx="120" cy="120" stroke="yellowgreen" />
+                    <circle r="40" cx="120" cy="120" stroke="#27AEE1" />
+                    <circle r="30" cx="120" cy="120" stroke="#B143D5" />
+                    <circle r="20" cx="120" cy="120" stroke="#D5438A" />
+                </g>
+            </svg>
+        </div>
+    </body>
+</html>

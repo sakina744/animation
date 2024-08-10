@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            body {
+             margin: 0;
+             width: 100vw;
+             height: 100vh;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;   
+            }
+            label {
+                width: 500px;
+                height: 200px;
+                position: relative;
+                display: block;
+                background: #ebebeb;
+                border-radius: 200px;
+                box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            label:after{
+                content: "";
+                width: 180px;
+                height: 180px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: linear-gradient(180deg,#ffcc89,#d8860b);
+                border-radius: 180px;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+            }
+            input {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            input:checked + label{
+                background: #242424;
+            }
+            input:checked + label:after {
+                left: 490px;
+                transform: translateX(-100%);
+                background: linear-gradient(180deg,#777,#3a3a3a);
+            }
+            label:active:after{
+                width: 260px;
+            }
+            .background {
+                width: 500vw;
+                height: 400vh;
+                background: #fff;
+                z-index: -1;
+                position: absolute;
+                transition: 0.3s;
+            }
+            input:checked + label + .background{
+                background: #242424;
+            }
+            label svg {
+                position: absolute;
+                width: 120px;
+                top: -300px;
+                z-index: 100;
+            }
+            label svg.sun {
+                left: 40px;
+                fill: #df911c;
+                transition: 0.3s;
+            }
+            label svg.moon {
+                left: 340px;
+                fill: #7e7e7e;
+                transition: 0.3s;
+            }
+            input:checked + label svg.sun {
+                fill: #413f3f;
+                
+            }
+            input:checked + label svg.moon {
+                fill: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="darkmode-toggle"/>
+        <label for="darkmode-toggle">
+            <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" class="sun" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5" stroke="#1C274C" stroke-width="1.5"/>
+<path d="M12 2V4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M12 20V22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M4 12L2 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M22 12L20 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M19.7778 4.22266L17.5558 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M4.22217 4.22266L6.44418 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M6.44434 17.5557L4.22211 19.7779" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M19.7778 19.7773L17.5558 17.5551" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+            <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" class="moon" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0174 2.80157C6.37072 3.29221 2.75 7.22328 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C16.7767 21.25 20.7078 17.6293 21.1984 12.9826C19.8717 14.6669 17.8126 15.75 15.5 15.75C11.4959 15.75 8.25 12.5041 8.25 8.5C8.25 6.18738 9.33315 4.1283 11.0174 2.80157ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C12.7166 1.25 13.0754 1.82126 13.1368 2.27627C13.196 2.71398 13.0342 3.27065 12.531 3.57467C10.8627 4.5828 9.75 6.41182 9.75 8.5C9.75 11.6756 12.3244 14.25 15.5 14.25C17.5882 14.25 19.4172 13.1373 20.4253 11.469C20.7293 10.9658 21.286 10.804 21.7237 10.8632C22.1787 10.9246 22.75 11.2834 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12Z" fill="#1C274C"/>
+</svg>
+        </label>
+        <div class="background"></div>
+    </body>
+</html>
